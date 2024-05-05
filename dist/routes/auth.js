@@ -31,10 +31,6 @@ const auth = __importStar(require("../controllers/auth/auth"));
 const user = __importStar(require("../controllers/user/user"));
 const apiResponse = __importStar(require("../helper/apiResponse"));
 const router = express_1.default.Router();
-router.use((req, res, next) => {
-    console.log("+++++++++++++");
-    return next();
-});
 router.post("/signup", auth.signUpInputChecks, user.isUserValid, auth.signUp);
 router.post("/signin", auth.signIn, auth.generateAuthToken, (request, response) => {
     return apiResponse.successResponseWithData(response, "user sign-in successfully", { token: request.body.token });

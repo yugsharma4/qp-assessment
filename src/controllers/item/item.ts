@@ -81,7 +81,6 @@ export const addInventory = async (
 
     return next();
   } catch (error) {
-    console.log(error);
     return apiResponse.somethingResponse(response);
   }
 };

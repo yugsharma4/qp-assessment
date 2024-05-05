@@ -5,11 +5,6 @@ import * as apiResponse from "../helper/apiResponse";
 
 const router = express.Router();
 
-router.use((req: Request, res: Response, next: NextFunction) => {
-  console.log("+++++++++++++");
-  return next();
-});
-
 router.post("/signup", auth.signUpInputChecks, user.isUserValid, auth.signUp);
 
 router.post(

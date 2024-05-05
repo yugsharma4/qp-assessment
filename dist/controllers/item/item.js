@@ -86,7 +86,6 @@ const addInventory = (request, response, next) => __awaiter(void 0, void 0, void
         return next();
     }
     catch (error) {
-        console.log(error);
         return apiResponse.somethingResponse(response);
     }
 });

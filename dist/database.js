@@ -13,12 +13,17 @@ exports.connect = void 0;
 const promise_1 = require("mysql2/promise");
 function connect() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("Connection===");
+        console.log(process.env.MYSQL_HOST);
+        console.log(process.env.MYSQL_USER);
+        console.log(process.env.MYSQL_DATABASE);
+        console.log(process.env.MYSQL_PASSWORD);
         const connection = yield (0, promise_1.createConnection)({
-            host: "mysql",
+            host: process.env.MYSQL_HOST || "localhost",
             port: 3306,
-            user: process.env.MYSQL_USER,
-            password: process.env.MYSQL_PASSWORD,
-            database: process.env.MYSQL_DATABASE,
+            user: process.env.MYSQL_USER || "root",
+            password: process.env.MYSQL_PASSWORD || "password",
+            database: process.env.MYSQL_DATABASE || "grocery_booking",
         });
         return connection;
     });

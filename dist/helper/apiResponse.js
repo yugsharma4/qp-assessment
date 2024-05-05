@@ -104,6 +104,5 @@ const somethingResponse = (res) => {
 };
 exports.somethingResponse = somethingResponse;
 const logResponse = () => {
-    // console.error("\x1B[36m"+JSON.stringify(responseData, null, 2)+"\x1B[39m")
     console.error("=======================================================\n");
 };
